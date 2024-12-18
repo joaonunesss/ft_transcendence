@@ -1,0 +1,100 @@
+Key Constraints to Comply With
+
+    Backend Framework: Use Django for the backend as specified.
+    Frontend Framework: Limited to Bootstrap and vanilla JavaScript unless overridden by a Frontend or Graphics module.
+    Database: Use PostgreSQL with adherence to its constraints.
+    Security: Ensure HTTPS, 2FA, and protection against SQL injection and XSS.
+    SPA Compliance: Must support browser Back/Forward buttons.
+    Containerization: Deploy the system using Docker with no bind mounts and rootless operation.
+    No Complete Solutions: Avoid libraries that solve a global feature outright; use modular tools for subcomponents only.
+
+Development Strategy
+1. Foundation Setup
+
+    Containerization:
+        Write a docker-compose.yml file to define services (Django app, PostgreSQL database, Nginx/SSL, and frontend).
+        Configure rootless Docker operations and store runtime files in /goinfre or /sgoinfre as required.
+    Environment Management:
+        Use .env files for secrets, API keys, and environment configurations, ensuring .env is ignored by Git.
+
+2. Backend Development
+
+    API Design:
+        Use Django REST Framework (DRF) to create APIs for:
+            User management (registration, authentication, 2FA).
+            Gameplay (matchmaking, tournament management, score tracking).
+            Real-time gameplay state updates using Django Channels and WebSockets.
+        Include endpoints for any future modules (e.g., AI opponent or additional games).
+
+    Database Schema:
+        Design schemas for users, games, scores, and tournaments.
+        Store hashed passwords using Django's default Argon2PasswordHasher.
+
+    Security:
+        Enable HTTPS using an Nginx reverse proxy with SSL certificates.
+        Implement 2FA via django-two-factor-auth or similar tools.
+        Validate all input server-side to mitigate XSS and SQL injection risks.
+
+3. Frontend Development
+
+    SPA Compliance:
+        Build the frontend with Bootstrap for styling and vanilla JavaScript for interactivity.
+        Use localStorage or sessionStorage to manage client-side state and navigation between sections.
+
+    Game Interface:
+        Develop the Pong game using an <canvas> element and JavaScript for rendering and logic.
+        Implement WebSocket-based real-time synchronization for multiplayer games.
+
+    Responsive Design:
+        Use Bootstrap's grid system to ensure responsiveness across all device types.
+        Test for compatibility with the latest stable version of Google Chrome.
+
+4. Gameplay Features
+
+    Core Game:
+        Ensure equal paddle speeds and consistent ball physics.
+        Capture the feel of the original Pong game while adhering to constraints.
+
+    Matchmaking and Tournaments:
+        Create matchmaking logic to pair players and organize tournaments.
+        Use database tables to store player pairings and tournament scores.
+
+    AI Opponent (if implemented):
+        Develop an AI with constraints (e.g., no A*). Use a rule-based approach to simulate player behavior.
+        AI interacts via simulated key inputs refreshed at one-second intervals.
+
+5. Advanced Features (Modules)
+
+To achieve maximum compliance and bonus points:
+
+    Remote Players (Major): Implement multiplayer over the network using Django Channels for real-time updates.
+    Live Chat (Major): Enable user messaging, game invites, and notifications for upcoming matches.
+    Score on Blockchain (Major): Store tournament scores using Solidity smart contracts on an Ethereum test network.
+    GDPR Compliance (Minor): Add features for user data anonymization, deletion, and local management.
+    Game Customization Options (Minor): Provide power-ups or map variants for Pong.
+    AI Opponent (Major): Introduce an AI opponent with realistic behavior and game adaptability.
+
+6. Monitoring and Deployment
+
+    Log Management:
+        Set up the ELK stack (Elasticsearch, Logstash, Kibana) for backend logs.
+        Create visual dashboards in Kibana for debugging and system insights.
+
+    System Monitoring:
+        Deploy Prometheus and Grafana for real-time system metrics and alerts.
+        Monitor API performance and WebSocket connections.
+
+    Testing and Launch:
+        Write unit tests for backend and integration tests for the API and frontend.
+        Ensure a single command (docker-compose up --build) launches all services correctly.
+
+Final Notes
+
+    Documentation:
+        Prepare comprehensive documentation covering setup, gameplay, and module implementation.
+    Justifications:
+        Be ready to justify all library/tool choices, especially for modules.
+    Evaluation-Ready:
+        Ensure perfect compliance with mandatory requirements before attempting bonus modules.
+
+By adhering to this strategy, you can create a feature-rich, secure, and modular Pong application compliant with all specified rules.

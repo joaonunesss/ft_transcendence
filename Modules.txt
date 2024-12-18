@@ -6,23 +6,26 @@
 #    By: jmarinho <jmarinho@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/18 11:33:47 by jmarinho          #+#    #+#              #
-#    Updated: 2024/12/18 13:37:03 by jmarinho         ###   ########.fr        #
+#    Updated: 2024/12/18 14:03:52 by jmarinho         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Modulo      |	Linguagem/Technology|   Tipo    |	Type    					|
----------------------------------------------------------------------------------
-Backend     |   Django              |   MAJOR   |	WEB*    					|
-Frontend    |   Bootstrap toolkit	|   MINOR   |	WEB*       					|
-Database    |   PostSQL             |   MINOR   |	WEB*      					|
-Blockchain  |   Solidity            |   MINOR   |	WEB       					|
-Live Chat   |                       |   MAJOR   |	Gameplay and user experience|
-AI Opponent |                       |   MAJOR   |	AI-Algo*       				|
-2FA         |                       |   MAJOR   |	Cybersecurity       		|
-Infra SetLog|ELK (Elasticsearch)    |   MAJOR   |	Devops*       				|
-Monitor syst|Prometheus and Grafana |   MINOR   |	Devops*       				|
-SupAllDevice|                       |   MINOR   |	Accessibility       		|
-ImplementAPI|                       |   MAJOR   |	Server-Side Pong*       	|
+Modulo      |	Linguagem/Technology|   Tipo    |	Type    					|	Enforcer	|
+-------------------------------------------------------------------------------------------------
+Backend     |   Django              |   MAJOR   |	WEB*    					|				|
+Frontend    |   Bootstrap toolkit	|   MINOR   |	WEB*       					|				|
+Database    |   PostSQL             |   MINOR   |	WEB*      					|				|
+Blockchain  |   Solidity            |   MINOR   |	WEB       					|				|
+StdUserManag|		                |   MAJOR   |	User Management				|	RUI			|
+RemotePlayer|                       |   MAJOR   |	Gameplay and user experience|	RUI			|
+Live Chat   |                       |   MAJOR   |	Gameplay and user experience|				|
+AI Opponent |	                    |   MAJOR   |	AI-Algo*       				|	JOAO		|
+UserGameStat|	                    |   MINOR   |	AI-Algo       				|	RUI			|
+2FA         |                       |   MAJOR   |	Cybersecurity       		|				|
+Infra SetLog|ELK (Elasticsearch)   	|   MAJOR   |	Devops*       				|	JOAO		|
+Monitor syst|Prometheus and Grafana |   MINOR   |	Devops \ Data Analytics*	|	JOAO		|
+SupAllDevice|                       |   MINOR   |	Accessibility       		|				|
+ImplementAPI|                       |   MAJOR   |	Server-Side Pong*       	|				|
 
 
 MUST COMPLY:
