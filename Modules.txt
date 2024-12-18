@@ -1,0 +1,53 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Modules.txt                                        :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jmarinho <jmarinho@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/12/18 11:33:47 by jmarinho          #+#    #+#              #
+#    Updated: 2024/12/18 13:37:03 by jmarinho         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+Modulo      |	Linguagem/Technology|   Tipo    |	Type    					|
+---------------------------------------------------------------------------------
+Backend     |   Django              |   MAJOR   |	WEB*    					|
+Frontend    |   Bootstrap toolkit	|   MINOR   |	WEB*       					|
+Database    |   PostSQL             |   MINOR   |	WEB*      					|
+Blockchain  |   Solidity            |   MINOR   |	WEB       					|
+Live Chat   |                       |   MAJOR   |	Gameplay and user experience|
+AI Opponent |                       |   MAJOR   |	AI-Algo*       				|
+2FA         |                       |   MAJOR   |	Cybersecurity       		|
+Infra SetLog|ELK (Elasticsearch)    |   MAJOR   |	Devops*       				|
+Monitor syst|Prometheus and Grafana |   MINOR   |	Devops*       				|
+SupAllDevice|                       |   MINOR   |	Accessibility       		|
+ImplementAPI|                       |   MAJOR   |	Server-Side Pong*       	|
+
+
+MUST COMPLY:
+
+        Minimal technical requirement
+-> Single Page Aplication, must be able to use the Back and Forward buttons of the browser.
+-> Must be compatible with the latest stable up-to-date version of Google Chrome .
+-> User should encounter no unhandled errors and no warnings when browsing the website.
+-> Everything must be launched with a single command line to run an autonomous container provided by Docker . Example : docker-compose up --build
+Cannot bind mount volumes between host and containers
+
+        Game
+-> Must be able to play 1v1
+-> Must be able to propose tournaments
+-> Have a registration system. Is modified using the std user mamagemenet module.
+-> Matchmaking system
+-> Everyone must adhere to the same rules, per ex. same oaddle speed.
+-> Must capture the essence of the original Pong (1972).
+
+        Security concerns
+-> Passwords must be hashed
+-> Protectes against SQL injections/XSS
+-> Enable HTTPS connection
+-> Validation for forms and any user input.
+-> 2FA and API routes protected.
+!ny credentials, API keys, env variables must be saved locally in a \
+.env file and ignored by git. Publicly stored credentials will lead \
+you directly to a failure of the project.
