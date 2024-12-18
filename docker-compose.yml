@@ -1,0 +1,6 @@
+services:
+  django:
+    build: ./backend/.
+    expose:
+      - 8000
+    restart: on-failure
